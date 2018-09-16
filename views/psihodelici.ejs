@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psajt</title>
+    <% include partials/scripts.ejs %>
+</head>
+
+<body class="stretched dark">
+<% include header.ejs %>
+<div class="clear"></div>
+
+<% if (data) { %>
+<% data.forEach(function(psy){ %>
+
+<!-- Page Title
+		============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1><%= psy.name %></h1>
+        <span>Lysergic acid diethylamide</span>
+    </div>
+
+</section><!-- #page-title end -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Post Content
+            ============================================= -->
+            <div class="postcontent nobottommargin clearfix">
+
+
+                <div class="tabs side-tabs tabs-bordered clearfix" id="tab-5">
+
+                    <ul class="tab-nav clearfix">
+                        <li><a href="#tabs-istorijat"><i class="icon-home2"></i>Istorijat</a></li>
+                        <li><a href="#tabs-upotreba">Upotreba</a></li>
+                        <li><a href="#tabs-efekti">Efekti</a></li>
+                        <li><a href="#tabs-farmakologija">Farmakologija</a></li>
+                        <li><a href="#tabs-mitovi">Mitovi</a></li>
+                        <li><a href="#tabs-svojstva">Tarapeutska svojstva</a></li>
+                        <li><a href="#tabs-toksicnost">Toksičnost i zloupotreba</a></li>
+                    </ul>
+
+                    <div class="tab-container">
+
+                        <div class="tab-content clearfix" id="tabs-istorijat">
+                            <%= psy.istorijat %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-upotreba">
+                            <%= psy.upotreba %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-efekti">
+                            <%= psy.efekti %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-farmakologija">
+                            <%= psy.farmakologija %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-mitovi">
+                            <%= psy.mitovi %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-svojstva">
+                            <%= psy.svojstva %>
+                        </div>
+                        <div class="tab-content clearfix" id="tabs-toksicnost">
+                            <%= psy.toksicnost %>
+                         </div>
+                    </div>
+
+                </div>
+
+                <div class="line"></div>
+
+
+
+
+
+            </div><!-- .postcontent end -->
+
+            <!-- Sidebar
+            ============================================= -->
+            <div class="sidebar nobottommargin col_last clearfix">
+                <div class="sidebar-widgets-wrap">
+
+                    <div class="widget widget_links clearfix">
+
+                        <h4>Shortcodes</h4>
+                        <ul>
+                            <li><a href="animations.html"><div>LSD</div></a></li>
+                            <li><a href="buttons.html"><div>Pečurke</div></a></li>
+                            <li><a href="carousel.html"><div>DMT</div></a></li>
+                            <li><a href="charts.html"><div>Meskalin</div></a></li>
+                            <li><a href="clients.html"><div>MDMA</div></a></li>
+                            <li><a href="columns-grids.html"><div>Ketamin</div></a></li>
+                            <li><a href="counters.html"><div>Iboga</div></a></li>
+                            <li><a href="dividers.html"><div>2-CB</div></a></li>
+                            <li><a href="featured-boxes.html"><div>Ostalo</div></a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="widget clearfix">
+
+                        <h4>Dribbble Shots</h4>
+                        <div id="dribbble-widget" class="dribbble-shots masonry-thumbs" data-user="envato" data-count="16" data-type="user"></div>
+
+                    </div>
+
+
+
+                </div>
+            </div><!-- .sidebar end -->
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
+
+<% }) %>
+<% } %>
+<!-- Go To Top
+	============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script src="/js/jquery.js"></script>
+<script src="/js/plugins.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="/js/functions.js"></script>
+
+</body>
+
+</html>
