@@ -2,224 +2,367 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Psajt</title>
-  <% include partials/scripts.ejs %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psajt</title>
+    <% include partials/scripts.ejs %>
 </head>
 
-<body class="stretched dark">
-<% include header.ejs %>
-<div class="clear"></div>
+<body class="stretched sticky-responsive-menu dark">
 
-<div class="container clearfix">
-
-    <div class="col_three_fifth bottommargin-lg">
-        <div class="fslider flex-thumb-grid grid-6" data-speed="400" data-arrows="true" data-thumbs="true" data-easing="easeOutQuad">
-            <div class="flexslider">
-                <div class="slider-wrap">
-                    <div class="slide" data-thumb="images/magazine/thumb/1.jpg">
-                        <a href="#">
-                            <img src="images/magazine/1.jpg" alt="">
-                            <div class="overlay">
-                                <div class="text-overlay">
-                                    <div class="text-overlay-title">
-                                        <h3>Locked Steel Gate</h3>
-                                    </div>
-                                    <div class="text-overlay-meta">
-                                        <span>Illustrations</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="slide" data-thumb="images/magazine/thumb/2.jpg">
-                        <a href="#">
-                            <img src="images/magazine/2.jpg" alt="">
-                            <div class="overlay">
-                                <div class="text-overlay">
-                                    <div class="text-overlay-title">
-                                        <h3>Russia hits back, says US acts like a 'bad surgeon'</h3>
-                                    </div>
-                                    <div class="text-overlay-meta">
-                                        <span><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="slide" data-thumb="images/magazine/thumb/3.jpg">
-                        <a href="#">
-                            <img src="images/magazine/3.jpg" alt="">
-                            <div class="overlay">
-                                <div class="text-overlay">
-                                    <div class="text-overlay-title">
-                                        <h3>Locked Steel Gate</h3>
-                                    </div>
-                                    <div class="text-overlay-meta">
-                                        <span>Technology</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="slide" data-thumb="images/magazine/thumb/4.jpg">
-                        <iframe src="http://player.vimeo.com/video/99895335" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                    <div class="slide" data-thumb="images/magazine/thumb/5.jpg">
-                        <a href="#">
-                            <img src="images/magazine/5.jpg" alt="">
-                            <div class="overlay">
-                                <div class="text-overlay">
-                                    <div class="text-overlay-title">
-                                        <h3>Locked Steel Gate</h3>
-                                    </div>
-                                    <div class="text-overlay-meta">
-                                        <span><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="slide" data-thumb="images/magazine/thumb/6.jpg">
-                        <a href="#">
-                            <img src="images/magazine/6.jpg" alt="">
-                            <div class="overlay">
-                                <div class="text-overlay">
-                                    <div class="text-overlay-title">
-                                        <h3>Locked Steel Gate</h3>
-                                    </div>
-                                    <div class="text-overlay-meta">
-                                        <span>Entertainment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col_two_fifth bottommargin-lg col_last">
-
-        <div class="spost clearfix">
-            <div class="entry-c">
-                <div class="entry-title">
-                    <h4><a href="#">UK government weighs Tesla's Model S for its ??5 million electric vehicle fleet</a></h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="spost clearfix">
-            <div class="entry-c">
-                <div class="entry-title">
-                    <h4><a href="#">MIT's new robot glove can give you extra fingers</a></h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="spost clearfix">
-            <div class="entry-c">
-                <div class="entry-title">
-                    <h4><a href="#">You can now listen to headphones through your hoodie</a></h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="spost clearfix">
-            <div class="entry-c">
-                <div class="entry-title">
-                    <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="spost clearfix">
-            <div class="entry-c">
-                <div class="entry-title">
-                    <h4><a href="#">A Baseball Team Blew Up A Bunch Of Justin Bieber And Miley Cyrus Merch</a></h4>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+<div id="wrapper" class="clearfix">
+    <% include header.ejs %>
     <div class="clear"></div>
 
-<div class="fancy-title title-border">
-    <h3>Technology</h3>
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+
+                <div class="postcontent nobottommargin">
+
+                    <div class="col_three_fifth bottommargin-lg">
+                        <div class="fslider flex-thumb-grid grid-6" data-speed="400" data-arrows="true" data-thumbs="true" data-easing="easeOutQuad">
+                            <div class="flexslider">
+                                <div class="slider-wrap">
+                                    <% if (data) { %>
+                                    <% data.forEach(function(novosti){ %>
+                                    <div class="slide"  data-thumb="/images/upload/<%= novosti.img_name %>">
+                                        <a href="/novosti/<%= novosti.category %>/<%= novosti.novosti_id %>">
+                                            <img src="/images/upload/<%= novosti.img_name%>" style="height: 300px " alt="">
+                                            <div class="overlay">
+                                                <div class="text-overlay">
+                                                    <div class="text-overlay-title">
+                                                        <h3><%= novosti.title%></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <% }) %>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col_two_fifth bottommargin-lg col_last">
+                        <% if (data) { %>
+                        <% data.forEach(function(novosti){ %>
+                        <div class="spost clearfix">
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h4><a href="/novosti/<%= novosti.category%>/<%= novosti.novosti_id %>"><%= novosti.title.slice(0, 85) %>...</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                        <% } %>
+
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="col_full bottommargin-lg clearfix">
+
+                        <div class="fancy-title title-border">
+                            <h3>Nauka</h3>
+                        </div>
+                        <% if(data2){
+                        data2.forEach(function (kultura) {
+
+                        %>
+
+                        <div class="col_one_third " style="width: 29%">
+                            <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="/novosti/<%= kultura.category%>/<%= kultura.novosti_id %>"><img class="image_fade" src="/images/upload/<%= kultura.img_name%>" alt="Image"></a>
+                                </div>
+                                <div class="entry-title">
+                                    <h3><a href="/novosti/<%= kultura.category%>/<%= kultura.novosti_id %>"><%= kultura.title.slice(0, 70) %></a></h3>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> <%= kultura.created_on.toISOString().slice(0,-14) %></li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
+                                            <% var count = 0;
+                                                data4.forEach(function (kom) {
+                                                    if(kom.id === kultura.novosti_id){
+                                                        count = count + 1;
+                                                    }
+                                                }) %>
+                                            <%= count %>
+                                        </a></li>
+                                </ul>
+                                <div class="entry-content">
+                                    <p><%- kultura.description.slice(0,88) %></p>
+                                    <a href="/novosti/<%= kultura.category %>/<%= kultura.novosti_id %>"class="more-link">Read More</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <%  }); } %>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="bottommargin-lg">
+                        <img src="images/magazine/ad.jpg" alt="Ad" class="aligncenter notopmargin nobottommargin">
+                    </div>
+
+                    <div class="col_full bottommargin-lg clearfix">
+
+                        <div class="fancy-title title-border">
+                            <h3>Kultura</h3>
+                        </div>
+                        <% if(data3){
+                        data3.forEach(function (kultura) {
+
+                        %>
+
+                        <div class="col_one_third " style="width: 29%">
+                            <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="/novosti/<%= kultura.category%>/<%= kultura.novosti_id %>"><img class="image_fade" src="/images/upload/<%= kultura.img_name%>" alt="Image"></a>
+                                </div>
+                                <div class="entry-title">
+                                    <h3><a href="/novosti/<%= kultura.category%>/<%= kultura.novosti_id %>"><%= kultura.title%></a></h3>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> <%= kultura.created_on.toISOString().slice(0,-14) %></li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
+                                            <% var count = 0;
+                                                data4.forEach(function (kom) {
+                                                    if(kom.id === kultura.novosti_id){
+                                                        count = count + 1;
+                                                    }
+                                                }) %>
+                                            <%= count %>
+                                        </a></li>
+                                </ul>
+                                <div class="entry-content">
+                                    <p><%- kultura.description.slice(0,88) %></p>
+                                </div>
+                                <a href="/novosti/<%= kultura.category %>/<%= kultura.novosti_id %>"class="more-link">Read More</a>
+
+                            </div>
+                        </div>
+
+                        <%  }); } %>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar nobottommargin col_last">
+
+                    <div class="sidebar-widgets-wrap">
+
+                        <div class="widget widget_links clearfix">
+
+                            <h4>Kategorije</h4>
+                            <div class="col_half nobottommargin">
+                                <ul>
+                                    <li><a href="#">Edukacija</a></li>
+                                    <li><a href="#">Tehnologija</a></li>
+                                    <li><a href="#">Nauka</a></li>
+                                    <li><a href="#">Sport</a></li>
+                                    <li><a href="#">Sta god</a></li>
+                                    <li><a href="#">Politika</a></li>
+                                    <li><a href="#">Business</a></li>
+                                </ul>
+                            </div>
+                            <div class="col_half nobottommargin col_last">
+                                <ul>
+                                    <li><a href="#">Lifestyle</a></li>
+                                    <li><a href="#">Travel</a></li>
+                                    <li><a href="#">Cricket</a></li>
+                                    <li><a href="#">Football</a></li>
+                                    <li><a href="#">Education</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="widget clearfix">
+
+                            <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
+
+                                <ul class="tab-nav clearfix">
+                                    <li><a href="#tabs-1">Popular</a></li>
+                                    <li><a href="#tabs-2">Recent</a></li>
+                                    <li><a href="#tabs-3"><i class="icon-comments-alt norightmargin"></i></a></li>
+                                </ul>
+
+                                <div class="tab-container">
+
+                                    <div class="tab-content clearfix" id="tabs-1">
+                                        <div id="popular-post-list-sidebar">
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li><i class="icon-comments-alt"></i> 35 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/2.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li><i class="icon-comments-alt"></i> 24 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li><i class="icon-comments-alt"></i> 19 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-content clearfix" id="tabs-2">
+                                        <div id="recent-post-list-sidebar">
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li>10th July 2014</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/2.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li>10th July 2014</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li>10th July 2014</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-content clearfix" id="tabs-3">
+                                        <div id="recent-post-list-sidebar">
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <strong>John Doe:</strong> Veritatis recusandae sunt repellat distinctio...
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <strong>Mary Jane:</strong> Possimus libero, earum officia architecto maiores....
+                                                </div>
+                                            </div>
+
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                                </div>
+                                                <div class="entry-c">
+                                                    <strong>Site Admin:</strong> Deleniti magni labore laboriosam odio...
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <% include footer.ejs %>
+
 </div>
-    <div class="col_one_third">
-        <div class="ipost clearfix">
-            <div class="entry-image">
-                <a href="#"><img class="image_fade" src="images/magazine/thumb/11.jpg" alt="Image"></a>
-            </div>
-            <div class="entry-title">
-                <h3><a href="blog-single.html">Yum, McDonald's apologize as new China food scandal brews</a></h3>
-            </div>
-            <ul class="entry-meta clearfix">
-                <li><i class="icon-calendar3"></i> 9th Sep 2014</li>
-                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 23</a></li>
-            </ul>
-            <div class="entry-content">
-                <p>Neque nesciunt molestias soluta esse debitis. Magni impedit quae consectetur consequuntur.</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="col_one_third">
-        <div class="ipost clearfix">
-            <div class="entry-image">
-                <a href="#"><img class="image_fade" src="images/magazine/thumb/16.jpg" alt="Image"></a>
-            </div>
-            <div class="entry-title">
-                <h3><a href="blog-single.html">Halliburton gets boost from rebound in North America drilling</a></h3>
-            </div>
-            <ul class="entry-meta clearfix">
-                <li><i class="icon-calendar3"></i> 23rd Aug 2014</li>
-                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 33</a></li>
-            </ul>
-            <div class="entry-content">
-                <p>Eaque iusto quod assumenda beatae, nesciunt aliquid. Vel, eos eligendi?</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="col_one_third col_last">
-        <div class="ipost clearfix">
-            <div class="entry-image">
-                <a href="#"><img class="image_fade" src="images/magazine/thumb/10.jpg" alt="Image"></a>
-            </div>
-            <div class="entry-title">
-                <h3><a href="blog-single.html">China sends spy ship off Hawaii during U.S.-led drills brews</a></h3>
-            </div>
-            <ul class="entry-meta clearfix">
-                <li><i class="icon-calendar3"></i> 11th Feb 2014</li>
-                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-            </ul>
-            <div class="entry-content">
-                <p>Magni impedit quae consectetur consequuntur adipisci veritatis modi a, officia cum.</p>
-            </div>
-        </div>
-    </div>
+        <!-- Go To Top
+            ============================================= -->
+        <div id="gotoTop" class="icon-angle-up"></div>
 
-    <div class="clear"></div>
+        <!-- External JavaScripts
+        ============================================= -->
+        <script src="js/jquery.js"></script>
+        <script src="js/plugins.js"></script>
 
-</div>
-<!-- Go To Top
-	============================================= -->
-<div id="gotoTop" class="icon-angle-up"></div>
+        <!-- Footer Scripts
+        ============================================= -->
+        <script src="js/functions.js"></script>
 
-<!-- External JavaScripts
-============================================= -->
-<script src="js/jquery.js"></script>
-<script src="js/plugins.js"></script>
-
-<!-- Footer Scripts
-============================================= -->
-<script src="js/functions.js"></script>
 
 </body>
 

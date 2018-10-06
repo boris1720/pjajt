@@ -17,7 +17,7 @@ connection.connect();
 connection.query('SELECT * from psihodelici', function(err, rows) {
     if (!err){
         router.get('/', function(req, res, next) {
-            res.render('psihodelici', { title: 'Psajt', data: rows });
+            res.render('psihodelicilist', { title: 'Psajt', data: rows });
         });
     }
     else{

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:background-image="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -15,17 +15,13 @@
 
 <% if (data) { %>
 <% data.forEach(function(psy){ %>
-
-<!-- Page Title
-		============================================= -->
-<section id="page-title">
-
+<div class="section parallax dark notopmargin noborder" style="padding: 80px 0; background-image: url('/images/upload/<%= psy.img%>');" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
         <h1><%= psy.name %></h1>
-        <span>Lysergic acid diethylamide</span>
+        <span><%= psy.subname %></span>
     </div>
+</div>
 
-</section><!-- #page-title end -->
 
 <!-- Content
 ============================================= -->
@@ -39,45 +35,69 @@
             ============================================= -->
             <div class="postcontent nobottommargin clearfix">
 
+                <div class="container">
+                    <a href="#istorijat" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-off"></i>Istorijat</a>
+                    <a href="#upotreba" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-signal"></i>Upotreba</a>
+                    <a href="#efekti" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-repeat"></i>Efekti</a>
+                    <a href="#farmakologija" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-inbox"></i>Farmakologija</a>
+                    <a href="#mitovi" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-lock3"></i>Mitovi</a>
+                    <a href="#svojstva" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-tags"></i>Tarapeutska svojstva</a>
+                    <a href="#toksicnost" class="button button-border button-rounded button-<%= psy.color%>"><i class="icon-bookmark2"></i>Toksičnost i zloupotreba</a>
+                </div>
 
-                <div class="tabs side-tabs tabs-bordered clearfix" id="tab-5">
+                <div >
+                    <div id="istorijat" style="padding-top: 90px">
+                        <h1 >Istorijat</h1>
+                        <%- psy.istorijat %>
+                    </div>
 
-                    <ul class="tab-nav clearfix">
-                        <li><a href="#tabs-istorijat"><i class="icon-home2"></i>Istorijat</a></li>
-                        <li><a href="#tabs-upotreba">Upotreba</a></li>
-                        <li><a href="#tabs-efekti">Efekti</a></li>
-                        <li><a href="#tabs-farmakologija">Farmakologija</a></li>
-                        <li><a href="#tabs-mitovi">Mitovi</a></li>
-                        <li><a href="#tabs-svojstva">Tarapeutska svojstva</a></li>
-                        <li><a href="#tabs-toksicnost">Toksičnost i zloupotreba</a></li>
-                    </ul>
+                    <div class="line"></div>
 
-                    <div class="tab-container">
+                    <div id="upotreba" style="padding-top: 90px">
+                        <h1>Upotreba</h1>
+                        <%- psy.upotreba %>
+                    </div>
 
-                        <div class="tab-content clearfix" id="tabs-istorijat">
-                            <%= psy.istorijat %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-upotreba">
-                            <%= psy.upotreba %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-efekti">
-                            <%= psy.efekti %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-farmakologija">
-                            <%= psy.farmakologija %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-mitovi">
-                            <%= psy.mitovi %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-svojstva">
-                            <%= psy.svojstva %>
-                        </div>
-                        <div class="tab-content clearfix" id="tabs-toksicnost">
-                            <%= psy.toksicnost %>
-                         </div>
+                    <div class="line"></div>
+
+                    <div id="efekti" style="padding-top: 90px">
+                        <h1 id="efekti">Efekti</h1>
+                        <%- psy.efekti %>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div id="farmakologija" style="padding-top: 90px">
+                        <h1>Farmakologija</h1>
+                        <%- psy.farmakologija %>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div id="mitovi" style="padding-top: 90px">
+                        <h1>Mitovi</h1>
+                        <%- psy.mitovi %>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div id="svojstva" style="padding-top: 90px">
+                        <h1>Tarapeutka svojstva</h1>
+                        <%- psy.svojstva %>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div id="toksicnost" style="padding-top: 90px">
+                        <h1>Toksičnost i zloupotreba</h1>
+                        <%- psy.toksicnost %>
                     </div>
 
                 </div>
+
+
+
+
 
                 <div class="line"></div>
 
@@ -94,17 +114,17 @@
 
                     <div class="widget widget_links clearfix">
 
-                        <h4>Shortcodes</h4>
+                        <h4>Linkovi</h4>
                         <ul>
-                            <li><a href="animations.html"><div>LSD</div></a></li>
-                            <li><a href="buttons.html"><div>Pečurke</div></a></li>
-                            <li><a href="carousel.html"><div>DMT</div></a></li>
-                            <li><a href="charts.html"><div>Meskalin</div></a></li>
-                            <li><a href="clients.html"><div>MDMA</div></a></li>
-                            <li><a href="columns-grids.html"><div>Ketamin</div></a></li>
-                            <li><a href="counters.html"><div>Iboga</div></a></li>
-                            <li><a href="dividers.html"><div>2-CB</div></a></li>
-                            <li><a href="featured-boxes.html"><div>Ostalo</div></a></li>
+                            <li><a href="/psihodelici/lsd"><div>LSD</div></a></li>
+                            <li><a href="/psihodelici/pecurke"><div>Pečurke</div></a></li>
+                            <li><a href="/psihodelici/dmt"><div>DMT</div></a></li>
+                            <li><a href="/psihodelici/meskalin"><div>Meskalin</div></a></li>
+                            <li><a href="/psihodelici/mdma"><div>MDMA</div></a></li>
+                            <li><a href="/psihodelici/ketamin"><div>Ketamin</div></a></li>
+                            <li><a href="/psihodelici/iboga"><div>Iboga</div></a></li>
+                            <li><a href="/psihodelici/2cb"><div>2-CB</div></a></li>
+                            <li><a href="/psihodelici/ostalo"><div>Ostalo</div></a></li>
 
                         </ul>
 
@@ -130,6 +150,8 @@
 
 <% }) %>
 <% } %>
+<% include footer.ejs %>
+
 <!-- Go To Top
 	============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>

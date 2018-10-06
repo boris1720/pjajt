@@ -25,6 +25,10 @@ var kontakt = require('./routes/kontakt');
 var admin = require('./routes/backend/admin');
 var create = require('./routes/backend/create');
 var update = require('./routes/backend/update');
+var del = require('./routes/backend/delete');
+var upload = require('./routes/backend/upload');
+var message = require('./routes/backend/message')
+
 
 
 
@@ -64,6 +68,9 @@ app.use('/kontakt', kontakt);
 app.use('/admin', admin);
 app.use('/create', create);
 app.use('/update', update);
+app.use('/delete', del);
+app.use('/upload', upload);
+app.use('/message', message);
 
 
 

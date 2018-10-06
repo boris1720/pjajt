@@ -22,9 +22,16 @@ var loggedin = function (req, res, next) {
 }
 
 router.get('/', loggedin, function (req, res, next) {
-    res.render('backend/create', {
-        user: req.user
-    })
+    var sql = "SELECT * from slike";
+    connection.query(sql, function(err, rows) {
+        if (!err) {
+            res.render('backend/create', { title: 'View', data: rows, user: req.user });
+        }
+        else {
+            console.log('Error while performing Query.');
+        }
+
+    });
 });
 
 router.get('/iskustva', loggedin, function (req, res, next) {
@@ -35,9 +42,9 @@ router.get('/iskustva', loggedin, function (req, res, next) {
 
 /* POST submit */
 router.post('/submit', function (req, res, next) {
-
+    var today = new Date().toISOString().slice(0,-14);
     var sql = "INSERT INTO `novosti` SET ?";
-    var post  = {title: req.body.title, description: req.body.description, img: req.body.img, author:req.body.author };
+    var post  = {title: req.body.title, description: req.body.description, img: req.body.img, category:req.body.category,author:req.body.author ,created_on:today };
     connection.query(sql,post, function (err, result) {
         if (!err) {
             res.redirect('/admin');
@@ -62,5 +69,8 @@ router.post('/submiti', function (req, res, next) {
     });
 
 });
+
+
+
 
 module.exports = router;

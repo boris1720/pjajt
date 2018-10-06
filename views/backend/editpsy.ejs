@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
+    <!-- Include CSS for icons. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
     <% include ../partials/scripts.ejs %>
 </head>
 <body class="stretched dark">
@@ -30,10 +37,14 @@
                 <% data.forEach(function(psy){
                 %>
 
-                <form role="form" action="/update/iskustva/submit" method="post" style="max-width: 35rem;">
+                <form role="form" action="/update/submitp" method="post" style="max-width: 35rem;">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input class="form-control" id="name" name="name" value="<%= psy.name %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="subname">Subname</label>
+                        <input class="form-control" id="subname" name="subname" value="<%= psy.subname %>">
                     </div>
                     <div class="form-group">
                         <label for="img">Image URL</label>
@@ -78,8 +89,12 @@
                     <div class="form-group">
                         <label for="toksicnost">Toksičnost</label>
                         <textarea class="form-control" id="toksicnost" name="toksicnost"  rows="3">
-                            <%- psy.istorijat %>
+                            <%- psy.toksicnost %>
                         </textarea>
+                    </div>
+                    <div class="form-group hidden">
+                        <label for="id">id</label>
+                        <input class="form-control" id="id" name="id" value="<%= psy.psy_id %>">
                     </div>
 
 
@@ -113,5 +128,15 @@
     </div>
 
 </section><!-- #content end -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+<!-- Initialize the editor. -->
+<script>
+    $(function() {
+        $('textarea').froalaEditor()
+    });
+</script>
 </body>
 </html>

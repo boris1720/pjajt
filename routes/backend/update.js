@@ -51,7 +51,7 @@ router.get('/iskustva/:id',loggedin, function(req, res, next) {
     var id = req.param("id");
     connection.query(sql ,id , function(err, rows) {
         if (!err) {
-            res.render('backend/editiskustvo', {title: 'Admin', id: id, data: rows});
+            res.render('backend/editiskustvo', {title: 'Admin', id: id,user: req.user, data: rows});
         }
         else {
             console.log('Error while performing Query.');
@@ -100,17 +100,17 @@ router.get('/:id',loggedin, function(req, res, next) {
 });
 
 
-
-
-
-/* POST submit */
+/* POST update page. */
 router.post('/submit', function (req, res, next) {
-
-    var sql = "INSERT INTO `novosti` SET ?";
-    var post  = {title: req.body.title, description: req.body.description, img: req.body.img, author:req.body.author };
-    connection.query(sql,post, function (err, result) {
+    var today = new Date().toISOString().slice(0,-14);
+    console.log(today);
+    var sql = "UPDATE `novosti` SET ? WHERE novosti_id = ?";
+    var id = req.body.id;
+    var post  = {title: req.body.title, description: req.body.description, img: req.body.img, author:req.body.author, created_on:today};
+    connection.query(sql,[post,id], function (err, result) {
         if (!err) {
-            res.redirect('/admin');
+
+            res.redirect('/update');
         }
         else {
             console.log(err);
@@ -118,13 +118,47 @@ router.post('/submit', function (req, res, next) {
     });
 
 });
+
+
+
 router.post('/submiti', function (req, res, next) {
 
-    var sql = "INSERT INTO `iskustva` SET ?";
+    var sql = "UPDATE `iskustva` SET ? WHERE iskustvo_id = ?";
+    var id = req.body.id;
     var post  = {title: req.body.title, description: req.body.description, author: req.body.author, location: req.body.location, substance: req.body.substance };
-    connection.query(sql,post, function (err, result) {
+    connection.query(sql,[post,id], function (err, result) {
         if (!err) {
-            res.redirect('/admin');
+
+            res.redirect('/update/iskustva');
+        }
+        else {
+            console.log(err);
+        }
+    });
+
+});
+
+router.post('/submitp', function (req, res, next) {
+
+    var sql = "UPDATE `psihodelici` SET ? WHERE psy_id = ?";
+    var id = req.body.id;
+    var post  = {
+        name: req.body.name,
+        subname: req.body.subname,
+        img: req.body.img,
+        istorijat: req.body.istorijat,
+        upotreba: req.body.upotreba,
+        efekti: req.body.efekti,
+        farmakologija: req.body.farmakologija,
+        mitovi: req.body.mitovi,
+        svojstva: req.body.svojstva,
+        toksicnost: req.body.toksicnost
+
+    };
+    connection.query(sql,[post,id], function (err, result) {
+        if (!err) {
+
+            res.redirect('/update/psihodelici');
         }
         else {
             console.log(err);

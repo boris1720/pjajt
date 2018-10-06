@@ -2923,7 +2923,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 
 .fslider.flex-thumb-grid .flex-control-nav.flex-control-thumbs li img {
 	width: 100% !important;
-	height: auto !important;
+	height: 60px !important;
 }
 
 
