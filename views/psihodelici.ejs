@@ -15,7 +15,7 @@
 
 <% if (data) { %>
 <% data.forEach(function(psy){ %>
-<div class="section parallax dark notopmargin noborder" style="padding: 80px 0; background-image: url('/images/upload/<%= psy.img%>');" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+<div class="section parallax dark notopmargin noborder" style=" padding: 80px 0; background-image: url('/images/upload/<%= psy.img%>');background-size: cover;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
         <h1><%= psy.name %></h1>
         <span><%= psy.subname %></span>

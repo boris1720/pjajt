@@ -165,6 +165,23 @@
                                                 <label for="id">id</label>
                                                 <input type="text" name="id" id="id" value="<%= id %>" size="22" tabindex="1" class="sm-form-control" />
                                             </div>
+                                            <% data.slice(0, 1).forEach(function(vesti){ %>
+
+                                            <% if(vesti.name != null){%>
+                                            <div class="hidden">
+                                                <label for="comm">Comments</label>
+                                                <input type="text" name="comm" id="comm" value="<%= data.length+1%>" size="22" tabindex="1" class="sm-form-control" />
+                                            </div>
+                                                <% } else{ %>
+                                            <div class="hidden">
+                                                <label for="comm">Comments</label>
+                                                <input type="text" name="comm" id="comm" value="<%= data.length%>" size="22" tabindex="1" class="sm-form-control" />
+                                            </div>
+
+                                            <% }%>
+
+
+                                            <% });%>
 
 
                                             <div class="clear"></div>
@@ -207,9 +224,8 @@
                             <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
 
                                 <ul class="tab-nav clearfix">
-                                    <li><a href="#tabs-1">Popular</a></li>
-                                    <li><a href="#tabs-2">Recent</a></li>
-                                    <li><a href="#tabs-3"><i class="icon-comments-alt norightmargin"></i></a></li>
+                                    <li><a href="#tabs-1">Najpopularnije</a></li>
+                                    <li><a href="#tabs-2">Najnovije</a></li>
                                 </ul>
 
                                 <div class="tab-container">
@@ -217,126 +233,57 @@
                                     <div class="tab-content clearfix" id="tabs-1">
                                         <div id="popular-post-list-sidebar">
 
+                                            <% data3.forEach(function (novosti) {%>
+
+
                                             <div class="spost clearfix">
                                                 <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="/images/magazine/small/3.jpg" alt=""></a>
+                                                    <a href="/novosti/<%= novosti.category%>/<%= novosti.novosti_id %>" class="nobg"><img class="rounded-circle" src="/images/upload/<%= novosti.img_name%>" alt=""></a>
                                                 </div>
                                                 <div class="entry-c">
                                                     <div class="entry-title">
-                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                                        <h4><a href="/novosti/<%= novosti.category%>/<%= novosti.novosti_id %>"><%= novosti.title.slice(0,55);%></a></h4>
                                                     </div>
                                                     <ul class="entry-meta">
-                                                        <li><i class="icon-comments-alt"></i> 35 Comments</li>
+                                                        <li><i class="icon-comments-alt"></i>
+
+                                                            <% var count = 0;
+                                                            data4.forEach(function (kom) {
+                                                            if(kom.id === novosti.novosti_id){
+                                                                count = count + 1;
+                                                            }});
+                                                            %>
+                                                            <%= count %> Comments</li>
                                                     </ul>
                                                 </div>
                                             </div>
 
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="/images/magazine/small/2.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                                    </div>
-                                                    <ul class="entry-meta">
-                                                        <li><i class="icon-comments-alt"></i> 24 Comments</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="/images/magazine/small/1.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                                                    </div>
-                                                    <ul class="entry-meta">
-                                                        <li><i class="icon-comments-alt"></i> 19 Comments</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                           <% });%>
 
                                         </div>
                                     </div>
                                     <div class="tab-content clearfix" id="tabs-2">
                                         <div id="recent-post-list-sidebar">
 
+                                            <% data2.forEach(function (novosti) { %>
+
                                             <div class="spost clearfix">
                                                 <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                                                    <a href="/novosti/<%= novosti.category%>/<%= novosti.novosti_id %>" class="nobg"><img class="rounded-circle" src="/images/upload/<%= novosti.img_name%>" alt=""></a>
                                                 </div>
                                                 <div class="entry-c">
                                                     <div class="entry-title">
-                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                        <h4><a href="/novosti/<%= novosti.category%>/<%= novosti.novosti_id %>"><%= novosti.title.slice(0, 70) %></a></h4>
                                                     </div>
                                                     <ul class="entry-meta">
-                                                        <li>10th July 2014</li>
+                                                        <li><%= novosti.created_on.toISOString().slice(0,-14) %></li>
                                                     </ul>
                                                 </div>
                                             </div>
+                                           <% })%>
 
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/2.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                                    </div>
-                                                    <ul class="entry-meta">
-                                                        <li>10th July 2014</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
 
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/magazine/small/3.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                                                    </div>
-                                                    <ul class="entry-meta">
-                                                        <li>10th July 2014</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                    <div class="tab-content clearfix" id="tabs-3">
-                                        <div id="recent-post-list-sidebar">
-
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <strong>John Doe:</strong> Veritatis recusandae sunt repellat distinctio...
-                                                </div>
-                                            </div>
-
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <strong>Mary Jane:</strong> Possimus libero, earum officia architecto maiores....
-                                                </div>
-                                            </div>
-
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <a href="#" class="nobg"><img class="rounded-circle" src="images/icons/avatar.jpg" alt=""></a>
-                                                </div>
-                                                <div class="entry-c">
-                                                    <strong>Site Admin:</strong> Deleniti magni labore laboriosam odio...
-                                                </div>
-                                            </div>
 
                                         </div>
                                     </div>

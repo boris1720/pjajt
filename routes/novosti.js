@@ -55,9 +55,24 @@ router.get('/:cat/:id', function(req, res, next) {
 
     connection.query(sql ,id , function(err, rows) {
         if (!err) {
-            console.log(rows);
+            connection.query('SELECT novosti.novosti_id, novosti.title, novosti.category, novosti.img, novosti.created_on, slike.img_name from novosti LEFT JOIN slike ON novosti.img=slike.img_id ORDER BY novosti.created_on DESC LIMIT 3', function(err, rows2) {
+                connection.query('SELECT novosti.novosti_id, novosti.title, novosti.category, novosti.img, novosti.comments, novosti.created_on, slike.img_name from novosti LEFT JOIN slike ON novosti.img=slike.img_id ORDER BY novosti.comments DESC LIMIT 3', function(err, rows3) {
+                    connection.query('SELECT id FROM komentari', function(err, rows4) {
 
-            res.render('novost', {title: 'Psajdt', id: id, cat:cat, data: rows});
+                        console.log(rows3);
+
+                        res.render('novost', {
+                            title: 'Psajt',
+                            id: id,
+                            cat: cat,
+                            data: rows,
+                            data2: rows2,
+                            data3: rows3,
+                            data4: rows4
+                        });
+                    });
+                });
+            });
         }
         else {
             console.log('Error while performing Query.');
@@ -77,7 +92,9 @@ router.post('/submit', function (req, res, next) {
     var post  = {name: req.body.name, text: req.body.comment, category: "novosti", id:req.body.id, comcreated_on:today };
     connection.query(sql,post, function (err, result) {
         if (!err) {
-            res.redirect('/novosti/' + req.body.id);
+            connection.query('UPDATE `novosti` SET ? WHERE novosti_id = ?',[{comments: req.body.comm},req.body.id], function(err, rows4) {
+                res.redirect('/novosti/' + req.body.cat + "/"+ req.body.id);
+            });
         }
         else {
             console.log(err);
